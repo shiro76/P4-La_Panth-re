@@ -9,11 +9,15 @@
 html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%
+    -ms-text-size-adjust: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 body {
-    margin: 0
+    margin: 0;
+    width: 100%;
+    height: 100%;
 }
 
 article,
@@ -235,11 +239,11 @@ th {
     *,
     :after,
     :before {
-        color: #000 !important;
-        text-shadow: none !important;
-        background: 0 0 !important;
-        -webkit-box-shadow: none !important;
-        box-shadow: none !important
+        color: #000 ;
+        text-shadow: none ;
+        background: 0 0 ;
+        -webkit-box-shadow: none ;
+        box-shadow: none 
     }
     a,
     a:visited {
@@ -268,7 +272,7 @@ th {
         page-break-inside: avoid
     }
     img {
-        max-width: 100% !important
+        max-width: 100% 
     }
     h2,
     h3,
@@ -285,21 +289,21 @@ th {
     }
     .btn>.caret,
     .dropup>.btn>.caret {
-        border-top-color: #000 !important
+        border-top-color: #000 
     }
     .label {
         border: 1px solid #000
     }
     .table {
-        border-collapse: collapse !important
+        border-collapse: collapse 
     }
     .table td,
     .table th {
-        background-color: #fff !important
+        background-color: #fff 
     }
     .table-bordered td,
     .table-bordered th {
-        border: 1px solid #ddd !important
+        border: 1px solid #ddd 
     }
 }
 
@@ -1439,6 +1443,11 @@ img {
     max-width: 100%;
     height: auto
 }
+/* Ajout de marges auto pour centrage des photos en design responsive mobile */
+.img-responsive {
+    margin: auto;
+}
+
 
 .img-rounded {
     border-radius: 6px
@@ -1991,17 +2000,17 @@ pre code {
     }
 }
 
-@media (min-width:992px) {
+@media screen and (min-width: 768px) {
     .container {
         width: 970px
     }
 }
 
-@media (min-width:1200px) {
+/* @media (min-width:1200px) {
     .container {
         width: 1170px
     }
-}
+} */
 
 .container-fluid {
     padding-right: 15px;
@@ -2009,11 +2018,7 @@ pre code {
     margin-right: auto;
     margin-left: auto
 }
-
-.row {
-    margin-right: -15px;
-    margin-left: -15px
-}
+/* Suppression du sélecteur ".row" avec des padding (left et right): -15px */
 
 .col-lg-1,
 .col-lg-10,
@@ -2458,7 +2463,7 @@ pre code {
     }
 }
 
-@media (min-width:992px) {
+@media screen and (min-width: 768px) {
     .col-md-1,
     .col-md-10,
     .col-md-11,
@@ -2628,7 +2633,7 @@ pre code {
     }
 }
 
-@media (min-width:1200px) {
+/* @media (min-width:1200px) {
     .col-lg-1,
     .col-lg-10,
     .col-lg-11,
@@ -2796,7 +2801,7 @@ pre code {
     .col-lg-offset-0 {
         margin-left: 0
     }
-}
+} */
 
 table {
     background-color: transparent
@@ -4285,8 +4290,8 @@ tbody.collapse.in {
     height: 0;
     margin-left: 2px;
     vertical-align: middle;
-    border-top: 4px dashed;
-    border-top: 4px solid\9;
+    /* suppression de la propriété border-top en doublon et correction de la valeur ci-dessous */
+    border-top: 4px solid;
     border-right: 4px solid transparent;
     border-left: 4px solid transparent
 }
@@ -4373,7 +4378,8 @@ tbody.collapse.in {
     cursor: not-allowed;
     background-color: transparent;
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false)
+    /* Correction de la propriété "filter" ci-dessous pour validation W3C - Ajout ";" fin de ligne */
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
 .open>.dropdown-menu {
@@ -4421,8 +4427,8 @@ tbody.collapse.in {
 .navbar-fixed-bottom .dropdown .caret {
     content: "";
     border-top: 0;
-    border-bottom: 4px dashed;
-    border-bottom: 4px solid\9
+    /* suppression de la propriété border-top en doublon et correction de la valeur ci-dessous */
+    border-bottom: 4px solid
 }
 
 .dropup .dropdown-menu,
@@ -5103,10 +5109,10 @@ textarea.input-group-sm>.input-group-btn>.btn {
         box-shadow: none
     }
     .navbar-collapse.collapse {
-        display: block !important;
-        height: auto !important;
+        display: block ;
+        height: auto ;
         padding-bottom: 0;
-        overflow: visible !important
+        overflow: visible 
     }
     .navbar-collapse.in {
         overflow-y: visible
@@ -5124,12 +5130,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
     max-height: 340px
 }
 
-@media (max-device-width:480px) and (orientation:landscape) {
-    .navbar-fixed-bottom .navbar-collapse,
-    .navbar-fixed-top .navbar-collapse {
-        max-height: 200px
-    }
-}
+/* Suppression de la media query car incohérente -> écran de max 480px en mode paysage : aucun appareil mobile ne fait cette dimension / Correction de la propriété @media "max-device-width -> max-width : erreur W3C propriété deprecated */
 
 .container-fluid>.navbar-collapse,
 .container-fluid>.navbar-header,
@@ -5421,10 +5422,10 @@ textarea.input-group-sm>.input-group-btn>.btn {
 
 @media (min-width:768px) {
     .navbar-left {
-        float: left !important
+        float: left 
     }
     .navbar-right {
-        float: right !important;
+        float: right ;
         margin-right: -15px
     }
     .navbar-right~.navbar-right {
@@ -7202,7 +7203,7 @@ button.close {
     }
 }
 
-@media (min-width:992px) {
+@media screen and (min-width: 768px) {
     .modal-lg {
         width: 900px
     }
@@ -7682,10 +7683,10 @@ button.close {
     margin: 1px;
     text-indent: -999px;
     cursor: pointer;
-    background-color: #000\9;
+    /* Suppression de la propriété "background-color" dupliquée et avec valeur fausse */
     background-color: rgba(0, 0, 0, 0);
     border: 1px solid #fff;
-    border-radius: 10px
+    border-radius: 10px;
 }
 
 .carousel-indicators .active {
@@ -7799,19 +7800,19 @@ button.close {
 }
 
 .pull-right {
-    float: right !important
+    float: right 
 }
 
 .pull-left {
-    float: left !important
+    float: left 
 }
 
 .hide {
-    display: none !important
+    display: none 
 }
 
 .show {
-    display: block !important
+    display: block 
 }
 
 .invisible {
@@ -7827,7 +7828,7 @@ button.close {
 }
 
 .hidden {
-    display: none !important
+    display: none 
 }
 
 .affix {
@@ -7842,7 +7843,7 @@ button.close {
 .visible-md,
 .visible-sm,
 .visible-xs {
-    display: none !important
+    display: none 
 }
 
 .visible-lg-block,
@@ -7857,221 +7858,221 @@ button.close {
 .visible-xs-block,
 .visible-xs-inline,
 .visible-xs-inline-block {
-    display: none !important
+    display: none 
 }
 
 @media (max-width:767px) {
     .visible-xs {
-        display: block !important
+        display: block 
     }
     table.visible-xs {
-        display: table !important
+        display: table 
     }
     tr.visible-xs {
-        display: table-row !important
+        display: table-row 
     }
     td.visible-xs,
     th.visible-xs {
-        display: table-cell !important
+        display: table-cell 
     }
 }
 
 @media (max-width:767px) {
     .visible-xs-block {
-        display: block !important
+        display: block 
     }
 }
 
 @media (max-width:767px) {
     .visible-xs-inline {
-        display: inline !important
+        display: inline 
     }
 }
 
 @media (max-width:767px) {
     .visible-xs-inline-block {
-        display: inline-block !important
+        display: inline-block 
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .visible-sm {
-        display: block !important
+        display: block 
     }
     table.visible-sm {
-        display: table !important
+        display: table 
     }
     tr.visible-sm {
-        display: table-row !important
+        display: table-row 
     }
     td.visible-sm,
     th.visible-sm {
-        display: table-cell !important
+        display: table-cell 
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .visible-sm-block {
-        display: block !important
+        display: block 
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .visible-sm-inline {
-        display: inline !important
+        display: inline 
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .visible-sm-inline-block {
-        display: inline-block !important
+        display: inline-block 
     }
 }
 
-@media (min-width:992px) and (max-width:1199px) {
+@media screen and (min-width: 768px) {
     .visible-md {
-        display: block !important
+        display: block 
     }
     table.visible-md {
-        display: table !important
+        display: table 
     }
     tr.visible-md {
-        display: table-row !important
+        display: table-row 
     }
     td.visible-md,
     th.visible-md {
-        display: table-cell !important
+        display: table-cell 
     }
 }
 
-@media (min-width:992px) and (max-width:1199px) {
+@media screen and (min-width: 768px) {
     .visible-md-block {
-        display: block !important
+        display: block 
     }
 }
 
-@media (min-width:992px) and (max-width:1199px) {
+@media screen and (min-width: 768px) {
     .visible-md-inline {
-        display: inline !important
+        display: inline 
     }
 }
 
-@media (min-width:992px) and (max-width:1199px) {
+@media screen and (min-width: 768px) {
     .visible-md-inline-block {
-        display: inline-block !important
+        display: inline-block 
     }
 }
 
-@media (min-width:1200px) {
+/* @media (min-width:1200px) {
     .visible-lg {
-        display: block !important
+        display: block 
     }
     table.visible-lg {
-        display: table !important
+        display: table 
     }
     tr.visible-lg {
-        display: table-row !important
+        display: table-row 
     }
     td.visible-lg,
     th.visible-lg {
-        display: table-cell !important
+        display: table-cell 
     }
-}
+} */
 
-@media (min-width:1200px) {
+/* @media (min-width:1200px) {
     .visible-lg-block {
-        display: block !important
+        display: block 
     }
 }
 
 @media (min-width:1200px) {
     .visible-lg-inline {
-        display: inline !important
+        display: inline 
     }
 }
 
 @media (min-width:1200px) {
     .visible-lg-inline-block {
-        display: inline-block !important
+        display: inline-block 
     }
-}
+} */
 
 @media (max-width:767px) {
     .hidden-xs {
-        display: none !important
+        display: none 
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .hidden-sm {
-        display: none !important
+        display: none 
     }
 }
 
-@media (min-width:992px) and (max-width:1199px) {
+@media screen and (min-width: 768px) {
     .hidden-md {
-        display: none !important
+        display: none 
     }
 }
 
-@media (min-width:1200px) {
+/* @media (min-width:1200px) {
     .hidden-lg {
-        display: none !important
+        display: none 
     }
-}
+} */
 
 .visible-print {
-    display: none !important
+    display: none 
 }
 
 @media print {
     .visible-print {
-        display: block !important
+        display: block 
     }
     table.visible-print {
-        display: table !important
+        display: table 
     }
     tr.visible-print {
-        display: table-row !important
+        display: table-row 
     }
     td.visible-print,
     th.visible-print {
-        display: table-cell !important
+        display: table-cell 
     }
 }
 
 .visible-print-block {
-    display: none !important
+    display: none 
 }
 
 @media print {
     .visible-print-block {
-        display: block !important
+        display: block 
     }
 }
 
 .visible-print-inline {
-    display: none !important
+    display: none 
 }
 
 @media print {
     .visible-print-inline {
-        display: inline !important
+        display: inline 
     }
 }
 
 .visible-print-inline-block {
-    display: none !important
+    display: none 
 }
 
 @media print {
     .visible-print-inline-block {
-        display: inline-block !important
+        display: inline-block 
     }
 }
 
 @media print {
     .hidden-print {
-        display: none !important
+        display: none 
     }
 }

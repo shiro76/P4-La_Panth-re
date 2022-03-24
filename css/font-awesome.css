@@ -14,7 +14,8 @@
 .fa {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
+    /* attribution de la taille de police des icones réseaux sociaux par défault "inherit -> 32px" */
+    font-size: 32px;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
